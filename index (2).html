@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscando Huellitas al Rescate | Rescate, Adopción y Apoyo Animal</title>
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --primary-hover: #EE5253;
+            --primary-light: #FFE5E5;
+            --secondary: #4ECDC4;
+            --dark: #1E293B;
+            --gray-700: #334155;
+            --gray-600: #475569;
+            --gray-400: #94A3B8;
+            --gray-100: #F1F5F9;
+            --gray-50: #F8FAFC;
+            --white: #FFFFFF;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 30px -10px rgba(255, 107, 107, 0.2);
+            --max-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--gray-700);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center { text-align: center; }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 26px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover { opacity: 0.9; }
+
+        /* Navbar */
+        .navbar {
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero {
+            padding: 60px 0 40px;
+            background: radial-gradient(circle at 50% 0%, var(--primary-light) 0%, rgba(255,255,255,0) 75%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: var(--white);
+            border: 1px solid #FFD1D1;
+            padding: 6px 16px;
+            border-radius: 50px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--gray-600);
+            max-width: 650px;
+            margin: 0 auto 28px;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Mockup Estilo Imagen Subida */
+        .hero-mockup-window {
+            margin: 40px auto 0;
+            max-width: 900px;
+            background-color: #0d111e;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 14px;
+            box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.2);
+        }
+
+        .mockup-header-dots {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding-left: 4px;
+        }
+
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .dot-red { background-color: #FF5F56; }
+        .dot-yellow { background-color: #FFBD2E; }
+        .dot-green { background-color: #27C93F; }
+
+        .mockup-inner-container {
+            border: 1px solid #1E293B;
+            border-radius: 6px;
+            padding: 14px;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 14px;
+            background-color: #0d111e;
+            min-height: 180px;
+        }
+
+        .mockup-sidebar {
+            background-color: #2A364F;
+            border-radius: 4px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sidebar-line-1 { height: 10px; width: 80%; background-color: #3d4a66; border-radius: 3px; }
+        .sidebar-line-2 { height: 8px; width: 60%; background-color: #37435d; border-radius: 3px; }
+
+        .mockup-main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .main-top-bar {
+            height: 18px;
+            width: 40%;
+            background-color: var(--primary);
+            border-radius: 4px;
+        }
+
+        .main-content-box {
+            background-color: #1A2338;
+            border-radius: 4px;
+            flex-grow: 1;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94A3B8;
+            font-size: 0.85rem;
+        }
+
+        /* Pilares */
+        .pillars { padding: 70px 0; }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .pillar-card {
+            background: var(--gray-50);
+            padding: 32px 24px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--gray-100);
+            text-align: center;
+        }
+
+        .pillar-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        /* Slider Section */
+        .slider-section {
+            padding: 70px 0;
+            background-color: var(--gray-50);
+        }
+
+        .slider-container {
+            position: relative;
+            max-width: 750px;
+            margin: 30px auto 0;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .slide-item {
+            min-width: 100%;
+            background: var(--white);
+            padding: 40px 32px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-100);
+            text-align: center;
+        }
+
+        .slide-text {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .slide-author strong {
+            display: block;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .slide-author span {
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .slider-btn {
+            background: var(--white);
+            border: 1px solid var(--gray-400);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .slider-dots { display: flex; gap: 8px; }
+
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--gray-400);
+            cursor: pointer;
+        }
+
+        .slider-dot.active {
+            background-color: var(--primary);
+            width: 20px;
+            border-radius: 10px;
+        }
+
+        /* Donation Section */
+        .donation {
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .donation-box {
+            background: linear-gradient(135deg, var(--dark) 0%, #0F172A 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: var(--radius-lg);
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .donation-box h2 {
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+        }
+
+        .donation-box p {
+            color: var(--gray-400);
+            max-width: 550px;
+            margin: 0 auto 28px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--gray-400);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--gray-700);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .mockup-inner-container { grid-template-columns: 1fr; }
+            .mockup-sidebar { display: none; }
+            .nav-links { display: none; }
+        }
+
+        .boton{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">🐾 Buscando Huellitas</a>
+            <ul class="nav-links">
+                <li><a href="#labor">Nuestra Labor</a></li>
+                <li><a href="#casos">Productos & Apoyo</a></li>
+                <li><a href="#donar">Donativo</a></li>
+                <li><a href="formulario.html">Formulario</a></li>
+            </ul>
+            <a href="#donar" class="btn btn-primary" style="padding: 8px 18px; font-size: 0.9rem;">Donar Ahora</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container text-center">
+            <div class="hero-badge">
+                <span>❤️ Rescate, Adopción y Amor Animal</span>
+            </div>
+            <h1>Buscando Huellitas al rescate</h1>
+            <p>Damos una segunda oportunidad a perritos y gatitos rescatados de las calles. Ayúdanos a transformar vidas a través del rescate, la adopción responsable y tu apoyo.</p>
+            <div class="hero-cta">
+                <a href="#labor" class="btn btn-primary">Adoptar una Huellita</a>
+                <a href="#donar" class="btn btn-secondary">Aportar / Donar</a>
+            </div>
+
+       
+
+    <section class="pillars" id="labor">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="font-size: 2rem; color: var(--dark);">¿Cómo trabajamos por ellos?</h2>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🚑</div>
+                    <h3>Rescate & Salud</h3>
+                    <p>Atendemos emergencias médicas, esterilizamos y rehabilitamos a animales en situación de vulnerabilidad.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🏡</div>
+                    <h3>Adopción Responsable</h3>
+                    <p>Conectamos a cada rescatado con una familia amorosa previa evaluación de hogar.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">💛</div>
+                    <h3>Apoyo Comunitario</h3>
+                    <p>Financiamos alimento, medicinas y refugio gracias al aporte de personas de buen corazón.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slider-section" id="casos">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="font-size: 2rem; color: var(--dark);">Nuestros Productos</h2>
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-track" id="sliderTrack">
+                    <div class="slide-item">
+                        <p class="slide-text">Placas de identificación personalizadas, collares, correas, pañuelos (bandanas) o juguetes.</p>
+                        <div class="slide-author">
+                            <strong>ACCESORIO PARA MASCOTA</strong>
+                            <button class="boton"><span>APORTA AQUÍ</button></span>
+                        </div>
+                    </div>
+                    <div class="slide-item">
+                        <p class="slide-text">Alimenta a un perrito por una semana ($10.000)</p>
+                        <div class="slide-author">
+                            <strong>KIT ALIMENTACION</strong>
+                            <button class="boton"><span>APORTA AQUÍ</button></span>
+                        </div>
+                    </div>
+                    <div class="slide-item">
+                        <p class="slide-text">Cubre la vacuna de un gatito ($15.000)</p>
+                        <div class="slide-author">
+                            <strong>KIT SALUD</strong>
+                            <button class="boton"><span>APORTA AQUÍ</button></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-nav">
+                <button class="slider-btn" id="prevBtn">‹</button>
+                <div class="slider-dots" id="sliderDots">
+                    <span class="slider-dot active" data-index="0"></span>
+                    <span class="slider-dot" data-index="1"></span>
+                    <span class="slider-dot" data-index="2"></span>
+                </div>
+                <button class="slider-btn" id="nextBtn">›</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="donation" id="donar">
+        <div class="container">
+            <div class="donation-box">
+                <h2>¿Nos ayudas a salvar más vidas?</h2>
+                <p>Tu donación económica cubre vacunas, alimento, cirugías y refugio temporal para los animales rescatados.</p>
+                <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 14px 32px;">Realizar un Donativo 🐾</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            © 2026 Buscando Huellitas al rescate. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        const track = document.getElementById('sliderTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentIndex = 0;
+        const totalSlides = 3;
+
+        function updateSlider(index) {
+            currentIndex = index;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            updateSlider((currentIndex + 1) % totalSlides);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            updateSlider((currentIndex - 1 + totalSlides) % totalSlides);
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                updateSlider(parseInt(e.target.getAttribute('data-index')));
+            });
+        });
+
+        setInterval(() => {
+            updateSlider((currentIndex + 1) % totalSlides);
+        }, 5000);
+    </script>
+
+
+
+</body>
+</html>

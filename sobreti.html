@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuenta tu Historia - Buscando Huellitas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header class="top-header">
+    <p>🐾 Buscando Huellitas - Comunidad de Historias</p>
+  </header>
+
+  <main class="main-container">
+    
+    <section class="form-section">
+      <div class="card">
+        <h2>Cuenta tu Historia 📖🐾</h2>
+        <p class="subtitle">Comparte cómo adoptaste a tu peludito o una experiencia especial. ¡Tu historia inspirará a otros!</p>
+
+        <form id="storyForm">
+          <div class="form-group">
+            <label for="autor">Tu Nombre</label>
+            <input type="text" id="autor" placeholder="Ej. Ana Gómez" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mascota">Nombre de tu Mascota</label>
+            <input type="text" id="mascota" placeholder="Ej. Rocky, Lorenzo, Luna..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="titulo">Título de la Historia</label>
+            <input type="text" id="titulo" placeholder="Ej. El día que cambiamos nuestras vidas" required>
+          </div>
+
+          <div class="form-group">
+            <label for="historia">Tu Historia</label>
+            <textarea id="historia" rows="5" placeholder="Cuéntanos todos los detalles..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Publicar Historia 🐾</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="stories-section">
+      <h2>Historias Compartidas ❤️</h2>
+      <div id="storiesContainer" class="stories-grid">
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Buscando Huellitas</h4>
+        <p>Protectora animal dedicada al rescate, rehabilitación y adopción de animales vulnerables.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>📧 contacto@buscandohuellitas.org</p>
+        <p>📞 Tel: +57 321 123 4567</p>
+        <p>📍 Bogotá, Colombia</p>
+      </div>
+      <div class="footer-col">
+        <h4>Síguenos</h4>
+        <a href="#">Instagram: @buscando_huellitas</a>
+        <a href="#">Facebook: /ProtectoraBuscandoHuellitas</a>
+        <a href="#">WhatsApp: +57 312 352 6305</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Protectora Animal Buscando Huellitas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="tu.js"></script>
+</body>
+</html>
