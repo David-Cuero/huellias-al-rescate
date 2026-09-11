@@ -1,0 +1,171 @@
+  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protectora Animal - Buscando Huellitas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo-container">
+        <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="#FCE8E3"/>
+          <ellipse cx="50" cy="62" rx="18" ry="14" fill="#5A3E36"/>
+          <ellipse cx="33" cy="42" rx="7" ry="10" fill="#5A3E36"/>
+          <ellipse cx="45" cy="36" rx="7" ry="10" fill="#5A3E36"/>
+          <ellipse cx="57" cy="36" rx="7" ry="10" fill="#5A3E36"/>
+          <ellipse cx="69" cy="42" rx="7" ry="10" fill="#5A3E36"/>
+          <ellipse cx="70" cy="68" rx="8" ry="6" fill="#EAB3AE"/>
+          <circle cx="62" cy="58" r="3" fill="#EAB3AE"/>
+          <circle cx="68" cy="55" r="3" fill="#EAB3AE"/>
+          <circle cx="74" cy="56" r="3" fill="#EAB3AE"/>
+          <circle cx="78" cy="60" r="3" fill="#EAB3AE"/>
+        </svg>
+        <div class="logo-text">
+          <span class="sub">PROTECTORA ANIMAL</span>
+          <span class="main">BUSCANDO HUELLITAS</span>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+            <li><a href="sobreti.html">tu historia</a></li>
+             <li><a href="compras.html">Productos</a></li>
+          <li><a href="index1.html">principal</a></li>
+         <li><a href="contacto.html">contacto</a></li>
+         
+          <li><a href="formulario.html" class="btn-nav">¡Donar Ahora!</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="catalogo-seccion">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="peluditos.js"></script>
+  <p class="instruccion-subtitulo">Haz clic en cualquier peludito para ver su información detallada</p>
+
+  <div class="grid-catalogo">
+    <!-- Tarjeta 1 -->
+    <div class="tarjeta-card" onclick="abrirModal('NutriPaw Premium', 'NUTRICIÓN', '$34.50', 'Fórmula balanceada con pollo fresco y arroz integral para perros adultos.', 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600', 'Modo de Uso / Indicaciones:', 'Servir según la tabla de peso diaria indicada en el empaque. Mantener agua fresca disponible.')">
+      <div class="card-imagen-wrap">
+        <span class="badge-categoria">NUTRICIÓN</span>
+        <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=400" alt="NutriPaw">
+      </div>
+      <div class="card-cuerpo">
+        <h3 class="card-titulo">Alimento NutriPaw Premium</h3>
+        <p class="card-desc">Fórmula balanceada con pollo fresco y arroz integral para perros adultos.</p>
+        <div class="card-pie">
+          <span class="card-precio">$34.50</span>
+          <button class="btn-agregar">+ Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="tarjeta-card" onclick="abrirModal('Pipeta FleaGuard', 'SALUD', '$13.00', 'Tratamiento de aplicación tópica directa sobre la piel de la nuca. Elimina parásitos en menos de 24 horas.', 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600', 'Modo de Uso / Indicaciones:', 'Aplicar la pipeta completa separando el pelo de la nuca. No bañar a la mascota 48h antes ni después.')">
+      <div class="card-imagen-wrap">
+        <span class="badge-categoria">SALUD</span>
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400" alt="FleaGuard">
+      </div>
+      <div class="card-cuerpo">
+        <h3 class="card-titulo">Pipeta Antiparasitaria FleaGuard</h3>
+        <p class="card-desc">Protección total contra pulgas, garrapatas y ácaros para gatos.</p>
+        <div class="card-pie">
+          <span class="card-precio">$13.00</span>
+          <button class="btn-agregar">+ Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="tarjeta-card" onclick="abrirModal('Champú Avena', 'HIGIENE', '$16.50', 'Fórmula suave con aloe vera y extracto de avena para piel sensible.', 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=600', 'Modo de Uso / Indicaciones:', 'Aplicar sobre el pelaje húmedo, masajear suavemente y enjuagar con abundante agua tibia.')">
+      <div class="card-imagen-wrap">
+        <span class="badge-categoria">HIGIENE</span>
+        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400" alt="Champú">
+      </div>
+      <div class="card-cuerpo">
+        <h3 class="card-titulo">Champú Hipoalergénico Avena</h3>
+        <p class="card-desc">Fórmula suave con aloe vera y extracto de avena para piel sensible.</p>
+        <div class="card-pie">
+          <span class="card-precio">$16.50</span>
+          <button class="btn-agregar">+ Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div class="tarjeta-card" onclick="abrirModal('Cama Ortopédica', 'ACCESORIOS', '$48.00', 'Espuma viscoelástica para un descanso óptimo y alivio articular.', 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600', 'Modo de Uso / Indicaciones:', 'Funda removible y lavable a máquina. Ideal para mascotas senior o con problemas articulares.')">
+      <div class="card-imagen-wrap">
+        <span class="badge-categoria">ACCESORIOS</span>
+        <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=400" alt="Cama">
+      </div>
+      <div class="card-cuerpo">
+        <h3 class="card-titulo">Cama Confort Ortopédica</h3>
+        <p class="card-desc">Espuma viscoelástica para un descanso óptimo y alivio articular.</p>
+        <div class="card-pie">
+          <span class="card-precio">$48.00</span>
+          <button class="btn-agregar">+ Ver más</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTANA EMERGENTE (MODAL) -->
+<div class="modal-overlay" id="modalDetalle" onclick="cerrarModalAfuera(event)">
+  <div class="modal-contenido">
+    <button class="modal-cerrar" onclick="cerrarModal()">&times;</button>
+    <div class="modal-grid">
+      <div class="modal-imagen">
+        <img id="modalImg" src="" alt="Detalle">
+      </div>
+      <div class="modal-info">
+        <span class="modal-categoria" id="modalCategoria">CATEGORÍA</span>
+        <h2 class="modal-titulo" id="modalTitulo">Título</h2>
+        <div class="modal-precio" id="modalPrecio">$0.00</div>
+        <p class="modal-descripcion" id="modalDesc">Descripción completa aquí.</p>
+        
+        <div class="modal-caja-nota">
+          <strong id="modalNotaTitulo">Modo de Uso / Indicaciones:</strong>
+          <p id="modalNotaTexto">Texto detallado de instrucciones o requisitos.</p>
+        </div>
+
+        
+
+        <button class="btn-modal-accion">Agregar al Carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Buscando Huellitas</h4>
+        <p>Protectora animal dedicada al rescate, rehabilitación y adopción de animales vulnerables.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>📧 contacto@buscandohuellitas.org</p>
+        <p>📞 Tel: +57 321 123 4567</p>
+        <p>📍 Bogotá, Colombia</p>
+      </div>
+      <div class="footer-col">
+        <h4>Síguenos</h4>
+        <a href="#">Instagram: @buscando_huellitas</a>
+        <a href="#">Facebook: /ProtectoraBuscandoHuellitas</a>
+        <a href="#">WhatsApp: +57 312 352 6305</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Protectora Animal Buscando Huellitas. Todos los derechos reservados.</p>
+    </div>
+  </footer>
